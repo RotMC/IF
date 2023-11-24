@@ -1,9 +1,9 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_20_0;
+package com.github.stefvanschie.inventoryframework.nms.v1_20_1;
 
 import com.github.stefvanschie.inventoryframework.abstraction.AnvilInventory;
 import com.github.stefvanschie.inventoryframework.adventuresupport.TextHolder;
-import com.github.stefvanschie.inventoryframework.nms.v1_20_0.util.CustomInventoryUtil;
-import com.github.stefvanschie.inventoryframework.nms.v1_20_0.util.TextHolderUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_20_1.util.CustomInventoryUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_20_1.util.TextHolderUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
