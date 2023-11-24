@@ -136,7 +136,8 @@ mvn paper-nms:init -pl nms/1_19_1
 mvn paper-nms:init -pl nms/1_19_2
 mvn paper-nms:init -pl nms/1_19_3
 mvn paper-nms:init -pl nms/1_19_4
-mvn paper-nms:init -pl nms/1_20_0-1
+mvn paper-nms:init -pl nms/1_20_0
+mvn paper-nms:init -pl nms/1_20_1
 mvn paper-nms:init -pl nms/1_20_2
 ```
 
