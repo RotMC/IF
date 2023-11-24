@@ -121,11 +121,18 @@ public enum Version {
     V1_19_4,
 
     /**
-     * Version 1.20.0 - 1.20.1
+     * Version 1.20.0
      *
      * @since 0.10.10
      */
-    V1_20_0_1,
+    V1_20_0,
+
+    /**
+     * Version 1.20.1
+     *
+     * @since 0.10.13
+     */
+    V1_20_1,
 
     /**
      * Version 1.20.2
@@ -137,7 +144,7 @@ public enum Version {
     /**
      * A collection of versions on which modern smithing tables are available.
      */
-    private static final Collection<Version> MODERN_SMITHING_TABLE_VERSIONS = EnumSet.of(V1_19_4, V1_20_0_1, V1_20_2);
+    private static final Collection<Version> MODERN_SMITHING_TABLE_VERSIONS = EnumSet.of(V1_19_4, V1_20_0, V1_20_1, V1_20_2);
 
     /**
      * A collection of versions on which legacy smithing tables ae available.
@@ -225,8 +232,9 @@ public enum Version {
             case "1.19.4":
                 return V1_19_4;
             case "1.20":
+                return V1_20_0;
             case "1.20.1":
-                return V1_20_0_1;
+                return V1_20_1;
             case "1.20.2":
                 return V1_20_2;
             default:

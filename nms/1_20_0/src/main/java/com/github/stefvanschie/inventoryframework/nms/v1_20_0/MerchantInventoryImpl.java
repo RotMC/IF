@@ -1,4 +1,4 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_20_0_1;
+package com.github.stefvanschie.inventoryframework.nms.v1_20_0;
 
 import com.github.stefvanschie.inventoryframework.abstraction.MerchantInventory;
 import net.minecraft.server.level.ServerPlayer;
