@@ -1,7 +1,6 @@
 name: Publish package to GitHub Packages
 on:
   workflow_dispatch:
-    branches: [ '*' ]
 jobs:
   publish:
     runs-on: ubuntu-latest
