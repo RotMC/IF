@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <module>IF</module>
+        <module>inventoryframework</module>
         <module>nms/abstraction</module>
 <!--        <module>nms/1_20_3</module>-->
         <module>nms/1_20_2</module>
@@ -23,7 +23,7 @@
     </properties>
 
     <groupId>xyz.rotmc.inventoryframework</groupId>
-    <artifactId>IF-parent</artifactId>
+    <artifactId>inventoryframework-parent</artifactId>
     <version>0.10.13-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -58,6 +58,13 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>rotmc-github</id>
+            <url>https://maven.pkg.github.com/RotMC/Packages/</url>
+        </repository>
+    </distributionManagement>
 
     <profiles>
         <profile>
