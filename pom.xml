@@ -7,7 +7,7 @@
     <modules>
         <module>inventoryframework</module>
         <module>nms/abstraction</module>
-<!--        <module>nms/1_20_3</module>-->
+        <module>nms/1_20_3</module>
         <module>nms/1_20_2</module>
         <module>nms/1_20_1</module>
         <module>nms/1_20_0</module>
@@ -17,14 +17,14 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.deploy.skip>false</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adventure.version>4.14.0</adventure.version>
+        <adventure.version>4.15.0</adventure.version>
     </properties>
 
     <groupId>xyz.rotmc.inventoryframework</groupId>
     <artifactId>inventoryframework-parent</artifactId>
-    <version>0.10.13-SNAPSHOT</version>
+    <version>0.10.13-SNAPSHOT-1.20.4</version>
     <packaging>pom</packaging>
 
     <name>IF</name>
@@ -108,17 +108,6 @@
                         <version>5.10.0</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
