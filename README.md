@@ -14,7 +14,7 @@ To add this project as a dependency to your pom.xml, add the following to your p
 <dependency>
     <groupId>xyz.rotmc.inventoryframework</groupId>
     <artifactId>IF</artifactId>
-    <version>0.10.13-SNAPSHOT-1.20.4</version>
+    <version>0.10.14</version>
 </dependency>
 ```
 The project is in the Central Repository, so specifying a repository is not needed.

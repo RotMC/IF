@@ -1,14 +1,16 @@
 package com.github.stefvanschie.inventoryframework.util;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.profile.PlayerProfile;
+import org.bukkit.profile.PlayerTextures;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Field;
-import java.util.Base64;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -35,10 +37,10 @@ public final class SkullUtil {
      * @since 0.5.0
      */
     @NotNull
-    public static ItemStack getSkull(@NotNull String id) {
+    public static ItemStack getSkull(@NotNull String id) throws MalformedURLException {
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
         ItemMeta itemMeta = Objects.requireNonNull(item.getItemMeta());
-        setSkull(itemMeta, id);
+        setSkull((SkullMeta) itemMeta, id);
         item.setItemMeta(itemMeta);
         return item;
     }
@@ -50,18 +52,13 @@ public final class SkullUtil {
      * @param meta the meta to change
      * @param id the skull id
      */
-    public static void setSkull(@NotNull ItemMeta meta, @NotNull String id) {
-        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        byte[] encodedData = Base64.getEncoder().encode(String.format("{textures:{SKIN:{url:\"%s\"}}}",
-            "http://textures.minecraft.net/texture/" + id).getBytes());
-        profile.getProperties().put("textures", new Property("textures", new String(encodedData)));
+    public static void setSkull(@NotNull SkullMeta meta, @NotNull String id) throws MalformedURLException {
+        final PlayerProfile profile = Bukkit.createPlayerProfile(UUID.randomUUID());
+        final PlayerTextures textures = profile.getTextures();
 
-        try {
-            Field profileField = meta.getClass().getDeclaredField("profile");
-            profileField.setAccessible(true);
-            profileField.set(meta, profile);
-        } catch (NoSuchFieldException | SecurityException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
+        textures.setSkin(new URL("http://textures.minecraft.net/texture/" + id));
+        profile.setTextures(textures);
+
+        meta.setOwnerProfile(profile);
     }
 }

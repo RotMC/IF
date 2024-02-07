@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -43,7 +44,13 @@ public class CSVFont extends Font {
 
         try (InputStream inputStream = getClass().getResourceAsStream(filePath)) {
             characterMappings = CSVUtil.readAll(inputStream).stream()
-                    .collect(Collectors.toMap(v -> v[0].charAt(0), v -> SkullUtil.getSkull(v[1])));
+                    .collect(Collectors.toMap(v -> v[0].charAt(0), v -> {
+                        try {
+                            return SkullUtil.getSkull(v[1]);
+                        } catch (MalformedURLException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }));
         } catch (IOException e) {
             throw new RuntimeException("Error loading CSV-based font: " + filePath, e);
         }
