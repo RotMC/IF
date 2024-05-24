@@ -6,7 +6,7 @@
     <parent>
         <groupId>xyz.rotmc.inventoryframework</groupId>
         <artifactId>inventoryframework-parent</artifactId>
-        <version>0.10.14</version>
+        <version>0.10.15</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -44,7 +44,7 @@
             <plugin>
                 <groupId>ca.bkaw</groupId>
                 <artifactId>paper-nms-maven-plugin</artifactId>
-                <version>1.4.3</version>
+                <version>1.4.4</version>
                 <executions>
                     <execution>
                         <phase>process-classes</phase>

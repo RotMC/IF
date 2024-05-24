@@ -31,6 +31,7 @@ import org.w3c.dom.NodeList;
 import java.lang.UnsupportedOperationException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -475,7 +476,11 @@ public abstract class Pane {
                         //noinspection deprecation
                         skullMeta.setOwner(elementItem.getAttribute("owner"));
                     else if (elementItem.hasAttribute("id")) {
-                        SkullUtil.setSkull(skullMeta, elementItem.getAttribute("id"));
+                        try {
+                            SkullUtil.setSkull(skullMeta, elementItem.getAttribute("id"));
+                        } catch (MalformedURLException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
 
                     itemStack.setItemMeta(skullMeta);

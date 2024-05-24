@@ -7,6 +7,7 @@
     <modules>
         <module>inventoryframework</module>
         <module>nms/abstraction</module>
+        <module>nms/1_20_4</module>
         <module>nms/1_20_3</module>
         <module>nms/1_20_2</module>
         <module>nms/1_20_1</module>
@@ -24,7 +25,7 @@
 
     <groupId>xyz.rotmc.inventoryframework</groupId>
     <artifactId>inventoryframework-parent</artifactId>
-    <version>0.10.14</version>
+    <version>0.10.15</version>
     <packaging>pom</packaging>
 
     <name>IF</name>
