@@ -2,66 +2,78 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>inventoryframework-parent</artifactId>
+        <groupId>xyz.rotmc.inventoryframework</groupId>
+        <version>0.10.21</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <modules>
-        <module>inventoryframework</module>
-        <module>nms/abstraction</module>
-        <module>nms/1_21</module>
-        <module>adventure-support</module>
-    </modules>
+    <artifactId>inventoryframework</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
         <maven.deploy.skip>false</maven.deploy.skip>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adventure.version>4.15.0</adventure.version>
     </properties>
 
-    <groupId>xyz.rotmc.inventoryframework</groupId>
-    <artifactId>inventoryframework-parent</artifactId>
-    <version>0.10.21</version>
-    <packaging>pom</packaging>
-
-    <name>IF</name>
-    <description>An inventory framework for managing GUIs</description>
-    <url>https://github.com/stefvanschie/IF</url>
-
-    <licenses>
-        <license>
-            <name>The Unlicense</name>
-            <url>http://unlicense.org/</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <scm>
-        <url>https://github.com/stefvanschie/IF.git</url>
-    </scm>
-
-    <developers>
-        <developer>
-            <name>Stef van Schie</name>
-            <email>stefvanschiedev@gmail.com</email>
-        </developer>
-    </developers>
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>mojang-repo</id>
+            <url>https://libraries.minecraft.net/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>24.0.1</version>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>${adventure.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>xyz.rotmc.inventoryframework</groupId>
+            <artifactId>1_21</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+            <exclusions>
+                <!-- Provided, but not accessible -->
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
+            <version>1.5.26</version>
+            <scope>provided</scope>
+            <exclusions>
+                <!-- Provided, but not accessible -->
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>rotmc-github</id>
-            <url>https://maven.pkg.github.com/RotMC/Packages/</url>
-        </repository>
-    </distributionManagement>
 
     <profiles>
         <profile>
@@ -88,6 +100,8 @@
     </profiles>
 
     <build>
+        <finalName>inventoryframework-${project.version}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -105,6 +119,19 @@
                         <version>5.10.0</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -131,12 +158,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <links>
-                        <link>https://hub.spigotmc.org/javadocs/bukkit/</link>
-                        <link>https://jd.adventure.kyori.net/api/4.10.0/</link>
-                    </links>
-                </configuration>
             </plugin>
         </plugins>
     </build>

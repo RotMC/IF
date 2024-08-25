@@ -1,9 +1,5 @@
 <settings>
     <servers>
-        <server>
-            <id>ossrh</id>
-            <username>stefvanschie</username>
-            <password>${deploy.password}</password>
-        </server>
+
     </servers>
 </settings>
