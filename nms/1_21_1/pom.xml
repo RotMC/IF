@@ -6,7 +6,7 @@
     <parent>
         <groupId>xyz.rotmc.inventoryframework</groupId>
         <artifactId>inventoryframework-parent</artifactId>
-        <version>0.10.23</version>
+        <version>0.10.24</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 

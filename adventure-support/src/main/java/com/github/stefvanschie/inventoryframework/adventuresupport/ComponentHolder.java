@@ -4,7 +4,6 @@ import com.google.gson.JsonElement;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
@@ -48,7 +47,7 @@ public abstract class ComponentHolder extends TextHolder {
     @NotNull
     @Contract(pure = true)
     public static ComponentHolder of(@NotNull Component value) {
-        Validate.notNull(value, "value mustn't be null");
+        Objects.requireNonNull(value, "value mustn't be null");
         return isNativeAdventureSupport()
                 ? new NativeComponentHolder(value)
                 : new ForeignComponentHolder(value);

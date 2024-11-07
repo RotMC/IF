@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 /**
  * A utility class for adding {@link TextHolder} support.
  *
- * @since 0.10.23
+ * @since 0.10.24
  */
 public final class TextHolderUtil {
     
@@ -27,7 +27,7 @@ public final class TextHolderUtil {
      *
      * @param holder the value to convert
      * @return the value as a vanilla component
-     * @since 0.10.23
+     * @since 0.10.24
      */
     @NotNull
     @Contract(pure = true)
@@ -44,7 +44,7 @@ public final class TextHolderUtil {
      *
      * @param holder the value to convert
      * @return the value as a vanilla component
-     * @since 0.10.23
+     * @since 0.10.24
      */
     @NotNull
     @Contract(pure = true)
@@ -57,7 +57,7 @@ public final class TextHolderUtil {
      *
      * @param holder the value to convert
      * @return the value as a vanilla component
-     * @since 0.10.23
+     * @since 0.10.24
      */
     @NotNull
     @Contract(pure = true)

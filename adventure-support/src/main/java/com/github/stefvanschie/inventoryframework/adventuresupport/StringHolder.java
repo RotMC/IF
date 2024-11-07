@@ -1,6 +1,5 @@
 package com.github.stefvanschie.inventoryframework.adventuresupport;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -38,7 +37,7 @@ public final class StringHolder extends TextHolder {
     @NotNull
     @Contract(pure = true)
     public static StringHolder of(@NotNull String value) {
-        Validate.notNull(value, "value mustn't be null");
+        Objects.requireNonNull(value, "value mustn't be null");
         return new StringHolder(value);
     }
     

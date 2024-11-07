@@ -29,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Internal grindstone inventory for 1.21
  *
- * @since 0.10.23
+ * @since 0.10.24
  */
 public class GrindstoneInventoryImpl extends GrindstoneInventory {
 
@@ -104,7 +104,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
      *
      * @param nmsPlayer the player to get the containerId id for
      * @return the containerId id
-     * @since 0.10.23
+     * @since 0.10.24
      * @deprecated no longer used internally
      */
     @Contract(pure = true)
@@ -118,7 +118,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
      *
      * @param serverPlayer the player to get the player connection from
      * @return the player connection
-     * @since 0.10.23
+     * @since 0.10.24
      * @deprecated no longer used internally
      */
     @NotNull
@@ -133,7 +133,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
      *
      * @param player the player to get the server player from
      * @return the server player
-     * @since 0.10.23
+     * @since 0.10.24
      */
     @NotNull
     @Contract(pure = true)
@@ -144,7 +144,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
     /**
      * A custom container grindstone
      *
-     * @since 0.10.23
+     * @since 0.10.24
      */
     private static class ContainerGrindstoneImpl extends GrindstoneMenu {
 
@@ -153,7 +153,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
          *
          * @param serverPlayer the player for whom this container should be opened
          * @param title the title of the gui
-         * @since 0.10.23
+         * @since 0.10.24
          */
         public ContainerGrindstoneImpl(@NotNull ServerPlayer serverPlayer, @NotNull Component title) {
             super(serverPlayer.nextContainerCounter(), serverPlayer.getInventory());
