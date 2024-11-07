@@ -15,13 +15,13 @@ import java.util.List;
  * @since 0.8.0
  */
 public enum Version {
-    V1_21;
+    V1_21_1;
 
     /**
      * A collection of versions on which modern smithing tables are available.
      */
     private static final Collection<Version> MODERN_SMITHING_TABLE_VERSIONS =
-            EnumSet.of(V1_21);
+            EnumSet.of(V1_21_1);
 
     /**
      * A collection of versions on which legacy smithing tables ae available.
@@ -63,7 +63,7 @@ public enum Version {
         String version = Bukkit.getBukkitVersion().split("-")[0];
 
         return switch (version) {
-            case "1.21", "1.21.1" -> V1_21;
+            case "1.21.1" -> V1_21_1;
             default -> throw new UnsupportedVersionException("The server version provided is not supported");
         };
     }

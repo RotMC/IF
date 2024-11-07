@@ -5,7 +5,7 @@
     <parent>
         <artifactId>inventoryframework-parent</artifactId>
         <groupId>xyz.rotmc.inventoryframework</groupId>
-        <version>0.10.21</version>
+        <version>0.10.22</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
