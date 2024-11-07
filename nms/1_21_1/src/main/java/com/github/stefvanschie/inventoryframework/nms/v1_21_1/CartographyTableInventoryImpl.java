@@ -31,7 +31,7 @@ import java.lang.reflect.Field;
 /**
  * Internal cartography table inventory for 1.21
  *
- * @since 0.10.22
+ * @since 0.10.23
  */
 public class CartographyTableInventoryImpl extends CartographyTableInventory {
 
@@ -92,7 +92,7 @@ public class CartographyTableInventoryImpl extends CartographyTableInventory {
      *
      * @param nmsPlayer the player to get the container id for
      * @return the container id
-     * @since 0.10.22
+     * @since 0.10.23
      */
     @Contract(pure = true)
     private int getContainerId(@NotNull net.minecraft.world.entity.player.Player nmsPlayer) {
@@ -104,7 +104,7 @@ public class CartographyTableInventoryImpl extends CartographyTableInventory {
      *
      * @param serverPlayer the player to get the player connection from
      * @return the player connection
-     * @since 0.10.22
+     * @since 0.10.23
      */
     @NotNull
     @Contract(pure = true)
@@ -117,7 +117,7 @@ public class CartographyTableInventoryImpl extends CartographyTableInventory {
      *
      * @param player the player to get the server player from
      * @return the server player
-     * @since 0.10.22
+     * @since 0.10.23
      */
     @NotNull
     @Contract(pure = true)
@@ -128,7 +128,7 @@ public class CartographyTableInventoryImpl extends CartographyTableInventory {
     /**
      * A custom container cartography table
      *
-     * @since 0.10.22
+     * @since 0.10.23
      */
     private class ContainerCartographyTableImpl extends CartographyTableMenu {
 

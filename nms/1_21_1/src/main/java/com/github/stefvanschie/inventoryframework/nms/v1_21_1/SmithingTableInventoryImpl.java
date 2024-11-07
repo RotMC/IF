@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Internal smithing table inventory for 1.21. This is only available for Minecraft 1.20 and higher.
  *
- * @since 0.10.22
+ * @since 0.10.23
  */
 public class SmithingTableInventoryImpl extends SmithingTableInventory {
 
@@ -139,7 +139,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
      *
      * @param player the player to set the cursor
      * @param item the item to set the cursor to
-     * @since 0.10.22
+     * @since 0.10.23
      * @deprecated no longer used internally
      */
     @Deprecated
@@ -155,7 +155,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
      *
      * @param player the player to send the result item to
      * @param item the result item
-     * @since 0.10.22
+     * @since 0.10.23
      * @deprecated no longer used internally
      */
     @Deprecated
@@ -172,7 +172,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
      *
      * @param nmsPlayer the player to get the container id for
      * @return the container id
-     * @since 0.10.22
+     * @since 0.10.23
      * @deprecated no longer used internally
      */
     @Contract(pure = true)
@@ -186,7 +186,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
      *
      * @param serverPlayer the player to get the player connection from
      * @return the player connection
-     * @since 0.10.22
+     * @since 0.10.23
      * @deprecated no longer used internally
      */
     @NotNull
@@ -201,7 +201,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
      *
      * @param player the player to get the server player from
      * @return the server player
-     * @since 0.10.22
+     * @since 0.10.23
      */
     @NotNull
     @Contract(pure = true)
@@ -212,7 +212,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
     /**
      * A custom container smithing table
      *
-     * @since 0.10.22
+     * @since 0.10.23
      */
     private static class ContainerSmithingTableImpl extends SmithingMenu {
 
@@ -221,7 +221,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
          *
          * @param serverPlayer the player for whom this anvil container is
          * @param title the title of the inventory
-         * @since 0.10.22
+         * @since 0.10.23
          */
         public ContainerSmithingTableImpl(@NotNull ServerPlayer serverPlayer, @NotNull Component title) {
             super(serverPlayer.nextContainerCounter(), serverPlayer.getInventory(),
