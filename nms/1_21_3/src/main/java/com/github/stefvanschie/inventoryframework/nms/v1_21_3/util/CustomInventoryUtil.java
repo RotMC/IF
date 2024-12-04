@@ -1,4 +1,4 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_21_1.util;
+package com.github.stefvanschie.inventoryframework.nms.v1_21_3.util;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A utility class for custom inventories
  *
- * @since 0.10.24
+ * @since 0.10.25
  */
 public final class CustomInventoryUtil {
 
@@ -25,7 +25,7 @@ public final class CustomInventoryUtil {
      *
      * @param items the items to convert
      * @return a list of converted items
-     * @since 0.10.24
+     * @since 0.10.25
      */
     @NotNull
     @Contract(pure = true)
