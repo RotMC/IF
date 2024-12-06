@@ -58,8 +58,8 @@
 
     <distributionManagement>
         <repository>
-            <id>rotmc-github</id>
-            <url>https://maven.pkg.github.com/RotMC/Packages/</url>
+            <id>telosPackages</id>
+            <url>https://repo.telosrealms.com/repository/maven/</url>
         </repository>
     </distributionManagement>
 
