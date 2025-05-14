@@ -1,9 +1,9 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_21_3;
+package com.github.stefvanschie.inventoryframework.nms.v1_21_6;
 
 import com.github.stefvanschie.inventoryframework.abstraction.GrindstoneInventory;
 import com.github.stefvanschie.inventoryframework.adventuresupport.TextHolder;
-import com.github.stefvanschie.inventoryframework.nms.v1_21_3.util.CustomInventoryUtil;
-import com.github.stefvanschie.inventoryframework.nms.v1_21_3.util.TextHolderUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_21_6.util.CustomInventoryUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_21_6.util.TextHolderUtil;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket;
@@ -20,6 +20,7 @@ import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.craftbukkit.event.CraftEventFactory;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.Contract;
@@ -50,9 +51,7 @@ public class GrindstoneInventoryImpl extends GrindstoneInventory {
 
         ServerPlayer serverPlayer = getServerPlayer(player);
 
-        //ignore deprecation: superseding method is only available on Paper
-        //noinspection deprecation
-        CraftEventFactory.handleInventoryCloseEvent(serverPlayer);
+        CraftEventFactory.handleInventoryCloseEvent(serverPlayer, InventoryCloseEvent.Reason.PLUGIN);
 
         serverPlayer.containerMenu = serverPlayer.inventoryMenu;
 

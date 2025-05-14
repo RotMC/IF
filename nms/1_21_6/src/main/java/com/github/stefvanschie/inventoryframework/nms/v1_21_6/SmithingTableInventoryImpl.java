@@ -1,9 +1,9 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_21_3;
+package com.github.stefvanschie.inventoryframework.nms.v1_21_6;
 
 import com.github.stefvanschie.inventoryframework.abstraction.SmithingTableInventory;
 import com.github.stefvanschie.inventoryframework.adventuresupport.TextHolder;
-import com.github.stefvanschie.inventoryframework.nms.v1_21_3.util.CustomInventoryUtil;
-import com.github.stefvanschie.inventoryframework.nms.v1_21_3.util.TextHolderUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_21_6.util.CustomInventoryUtil;
+import com.github.stefvanschie.inventoryframework.nms.v1_21_6.util.TextHolderUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -22,6 +22,7 @@ import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.craftbukkit.event.CraftEventFactory;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.Contract;
@@ -53,9 +54,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
 
         ServerPlayer serverPlayer = getServerPlayer(player);
 
-        //ignore deprecation: superseding method is only available on Paper
-        //noinspection deprecation
-        CraftEventFactory.handleInventoryCloseEvent(serverPlayer);
+        CraftEventFactory.handleInventoryCloseEvent(serverPlayer, InventoryCloseEvent.Reason.PLUGIN);
 
         serverPlayer.containerMenu = serverPlayer.inventoryMenu;
 
@@ -225,7 +224,7 @@ public class SmithingTableInventoryImpl extends SmithingTableInventory {
          */
         public ContainerSmithingTableImpl(@NotNull ServerPlayer serverPlayer, @NotNull Component title) {
             super(serverPlayer.nextContainerCounter(), serverPlayer.getInventory(),
-                ContainerLevelAccess.create(serverPlayer.getCommandSenderWorld(), new BlockPos(0, 0, 0)));
+                ContainerLevelAccess.create(serverPlayer.level(), new BlockPos(0, 0, 0)));
 
             setTitle(title);
 

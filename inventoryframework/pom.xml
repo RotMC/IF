@@ -5,7 +5,7 @@
     <parent>
         <artifactId>inventoryframework-parent</artifactId>
         <groupId>xyz.rotmc.inventoryframework</groupId>
-        <version>0.10.25</version>
+        <version>0.10.27</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -41,7 +41,13 @@
         </dependency>
         <dependency>
             <groupId>xyz.rotmc.inventoryframework</groupId>
-            <artifactId>1_21_3</artifactId>
+            <artifactId>1_21_5</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>xyz.rotmc.inventoryframework</groupId>
+            <artifactId>1_21_6</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>

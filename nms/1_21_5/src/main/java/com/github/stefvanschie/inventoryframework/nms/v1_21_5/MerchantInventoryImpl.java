@@ -1,7 +1,7 @@
-package com.github.stefvanschie.inventoryframework.nms.v1_21_3;
+package com.github.stefvanschie.inventoryframework.nms.v1_21_5;
 
 import com.github.stefvanschie.inventoryframework.abstraction.MerchantInventory;
-import net.minecraft.core.component.DataComponentPredicate;
+import net.minecraft.core.component.DataComponentExactPredicate;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -35,7 +35,7 @@ public class MerchantInventoryImpl extends MerchantInventory {
             MerchantRecipe recipe = entry.getKey();
             List<ItemStack> ingredients = recipe.getIngredients();
 
-            if (ingredients.size() < 1) {
+            if (ingredients.isEmpty()) {
                 throw new IllegalStateException("Merchant recipe has no ingredients");
             }
 
@@ -86,7 +86,7 @@ public class MerchantInventoryImpl extends MerchantInventory {
     @NotNull
     @Contract(value = "_ -> new", pure = true)
     private ItemCost convertItemStackToItemCost(@NotNull net.minecraft.world.item.ItemStack itemStack) {
-        DataComponentPredicate predicate = DataComponentPredicate.allOf(itemStack.getComponents());
+        DataComponentExactPredicate predicate = DataComponentExactPredicate.allOf(itemStack.getComponents());
 
         return new ItemCost(itemStack.getItemHolder(), itemStack.getCount(), predicate, itemStack);
     }
