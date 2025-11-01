@@ -1,6 +1,7 @@
 package com.github.stefvanschie.inventoryframework.util.version;
 
 import com.github.stefvanschie.inventoryframework.exception.UnsupportedVersionException;
+import io.papermc.paper.ServerBuildInfo;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +16,7 @@ import java.util.List;
  * @since 0.8.0
  */
 public enum Version {
-    V1_21_5,
-    V1_21_6;
+    V1_21_10;
 
     /**
      * A collection of versions on which modern smithing tables are available.
@@ -61,12 +61,9 @@ public enum Version {
     @NotNull
     @Contract(pure = true)
     public static Version getVersion() {
-        String version = Bukkit.getBukkitVersion().split("-")[0];
-
-        return switch (version) {
-            case "1.21.5" -> V1_21_5;
-            case "1.21.6" -> V1_21_6;
-            default -> throw new UnsupportedVersionException("The server version provided is not supported");
-        };
+        if (ServerBuildInfo.buildInfo().minecraftVersionId().equals("1.21.10")) {
+            return V1_21_10;
+        }
+        throw new UnsupportedVersionException("The server version provided is not supported");
     }
 }
