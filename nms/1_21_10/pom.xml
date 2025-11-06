@@ -6,7 +6,7 @@
     <parent>
         <groupId>xyz.rotmc.inventoryframework</groupId>
         <artifactId>inventoryframework-parent</artifactId>
-        <version>0.10.28</version>
+        <version>0.10.29</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -55,6 +55,7 @@
             <groupId>com.mojang</groupId>
             <artifactId>datafixerupper</artifactId>
             <version>8.0.16</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
