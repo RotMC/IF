@@ -8,12 +8,13 @@
         <module>inventoryframework</module>
         <module>nms/abstraction</module>
         <module>nms/1_21_10</module>
+        <module>nms/26_1_2</module>
         <module>adventure-support</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <maven.deploy.skip>false</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <adventure.version>4.15.0</adventure.version>
@@ -21,7 +22,7 @@
 
     <groupId>xyz.rotmc.inventoryframework</groupId>
     <artifactId>inventoryframework-parent</artifactId>
-    <version>0.10.29</version>
+    <version>0.10.30</version>
     <packaging>pom</packaging>
 
     <name>IF</name>
@@ -131,12 +132,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <links>
-                        <link>https://hub.spigotmc.org/javadocs/bukkit/</link>
-                        <link>https://jd.adventure.kyori.net/api/4.10.0/</link>
-                    </links>
-                </configuration>
             </plugin>
         </plugins>
     </build>

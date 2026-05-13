@@ -16,7 +16,8 @@ import java.util.List;
  * @since 0.8.0
  */
 public enum Version {
-    V1_21_10;
+    V1_21_10,
+    V26_1_2;
 
     /**
      * A collection of versions on which modern smithing tables are available.
@@ -63,6 +64,9 @@ public enum Version {
     public static Version getVersion() {
         if (ServerBuildInfo.buildInfo().minecraftVersionId().equals("1.21.10")) {
             return V1_21_10;
+        }
+        if (ServerBuildInfo.buildInfo().minecraftVersionId().equals("26.1.2")) {
+            return V26_1_2;
         }
         throw new UnsupportedVersionException("The server version provided is not supported");
     }

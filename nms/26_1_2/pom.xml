@@ -10,7 +10,7 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>1_21_10</artifactId>
+    <artifactId>26_1_2</artifactId>
 
     <properties>
         <maven.deploy.skip>false</maven.deploy.skip>
@@ -42,13 +42,13 @@
         <dependency>
             <groupId>ca.bkaw</groupId>
             <artifactId>paper-nms</artifactId>
-            <version>1.21.10-SNAPSHOT</version>
+            <version>26.1.2.build.63-stable-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.10-R0.1-SNAPSHOT</version>
+            <version>[26.1.2.build,)</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>ca.bkaw</groupId>
                 <artifactId>paper-nms-maven-plugin</artifactId>
-                <version>1.4.10</version>
+                <version>1.4.11-SNAPSHOT</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
